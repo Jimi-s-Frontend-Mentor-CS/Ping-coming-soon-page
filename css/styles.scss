@@ -17,7 +17,6 @@ main {
         place-items: center;
         flex-direction: column;
         padding-block: 2em;
-        padding-inline: 1em;
         font-family: $fontFamily;
 
 
@@ -170,7 +169,6 @@ main {
 @media (min-width: 476px) {
     main {
         place-content: center;
-        padding-inline: 30em;
         .content {
 
             h1 {
