@@ -1,0 +1,246 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  place-items: center;
+  background-color: white;
+}
+
+main .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  place-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-block: 2em;
+  padding-inline: 1em;
+  font-family: "Libre Franklin", sans-serif;
+}
+
+main .content span {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 3rem;
+}
+
+main .content span::after {
+  content: '.';
+  color: #4f7df3;
+}
+
+main .content h1 {
+  margin-top: 2em;
+  color: #969696;
+  font-weight: 300;
+  font-size: 2.5rem;
+}
+
+main .content h1 strong {
+  color: black;
+}
+
+main .content h3 {
+  margin-top: .75em;
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+main .content .input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  place-items: center;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  margin-top: 2em;
+  gap: 1em;
+  width: 100%;
+  padding-inline: 2em;
+}
+
+main .content .input > *,
+main .content .input > * > *:not(p) {
+  width: 100%;
+  font-size: 1.5rem;
+  padding: .75em;
+  border-radius: 2em;
+  border: none;
+}
+
+main .content .input .inputGroup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0;
+}
+
+main .content .input .inputGroup .error {
+  font-size: 1rem;
+  font-style: italic;
+  color: #ff5263;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  visibility: hidden;
+}
+
+main .content .input .inputGroup .error.visible {
+  margin-left: 4.5em;
+  margin-top: .5em;
+  visibility: visible;
+}
+
+main .content .input .inputGroup .error::before {
+  content: "Please provide a valid email address";
+}
+
+main .content .input .inputGroup .error.empty::before {
+  content: "Whoops! It looks like you forgot to add your email";
+}
+
+main .content .input .inputGroup input {
+  border: 1px solid #c2d3ff;
+}
+
+main .content .input .inputGroup input::-webkit-input-placeholder {
+  color: #c2d3ff;
+  padding-left: 1em;
+  font-size: 1.25rem;
+}
+
+main .content .input .inputGroup input:-ms-input-placeholder {
+  color: #c2d3ff;
+  padding-left: 1em;
+  font-size: 1.25rem;
+}
+
+main .content .input .inputGroup input::-ms-input-placeholder {
+  color: #c2d3ff;
+  padding-left: 1em;
+  font-size: 1.25rem;
+}
+
+main .content .input .inputGroup input::placeholder {
+  color: #c2d3ff;
+  padding-left: 1em;
+  font-size: 1.25rem;
+}
+
+main .content .input .inputGroup input:active, main .content .input .inputGroup input:focus, main .content .input .inputGroup input:hover {
+  outline: none;
+  border: 1px solid #151f29;
+}
+
+main .content .input .inputGroup input.invalid {
+  border: 1px solid #ff5263;
+}
+
+main .content .input button {
+  cursor: pointer;
+  background-color: #4f7df3;
+  color: white;
+  -webkit-box-shadow: 0 0.25em 0.5em #c2d3ff;
+          box-shadow: 0 0.25em 0.5em #c2d3ff;
+}
+
+main .content img {
+  width: 100%;
+  padding-block: 5em;
+}
+
+main .content .social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1.5em;
+  padding-block: 2em;
+}
+
+main .content .social i {
+  border: 1px solid rgba(194, 211, 255, 0.5);
+  border-radius: 50%;
+  background-color: white;
+  color: #4f7df3;
+  width: 2em;
+  height: 2em;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 2em;
+  cursor: pointer;
+}
+
+main .content .social i:hover, main .content .social i:active, main .content .social i:focus {
+  background-color: #4f7df3;
+  color: white;
+}
+
+main .content small {
+  margin-top: 1em;
+  font-size: 1rem;
+  color: #969696;
+}
+
+@media (min-width: 476px) {
+  main {
+    place-content: center;
+    padding-inline: 30em;
+  }
+  main .content h1 {
+    margin-top: 1.5em;
+  }
+  main .content .input {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin-top: 3em;
+  }
+  main .content .input input {
+    border: 1px solid rgba(150, 150, 150, 0.5);
+  }
+  main .content .input input::-webkit-input-placeholder {
+    color: rgba(150, 150, 150, 0.5);
+  }
+  main .content .input input:-ms-input-placeholder {
+    color: rgba(150, 150, 150, 0.5);
+  }
+  main .content .input input::-ms-input-placeholder {
+    color: rgba(150, 150, 150, 0.5);
+  }
+  main .content .input input::placeholder {
+    color: rgba(150, 150, 150, 0.5);
+  }
+  main .content .input button {
+    -webkit-box-flex: 30%;
+        -ms-flex: 30%;
+            flex: 30%;
+  }
+}
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,199 @@
+@import "./abstracts/colors";
+@import "./abstracts/typography";
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    display: flex;
+    place-items: center;
+    background-color: $clrWhite;
+
+    .content {
+        display: flex;
+        place-items: center;
+        flex-direction: column;
+        padding-block: 2em;
+        padding-inline: 1em;
+        font-family: $fontFamily;
+
+
+        span {
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 3rem;
+            
+            &::after {
+                content: '.';
+                color: $clrBlue;
+            }
+        }
+
+        h1 {
+            margin-top: 2em;
+            color: $clrGray;
+            font-weight: 300;
+            font-size: 2.5rem;
+            strong {
+                color: $clrBlack
+            }
+        }
+
+        h3 {
+            margin-top: .75em;
+            font-size: 1.25rem;
+            font-weight: 300;
+        }
+
+        .input {
+            display: flex;
+            flex-direction: column;
+            place-items: center;
+            align-items: baseline;
+            margin-top: 2em;
+            gap: 1em;
+            width: 100%;
+            padding-inline: 2em;
+            
+            > *,
+            > * > *:not(p) {
+                width: 100%;
+                font-size: 1.5rem;
+                padding: .75em;
+                border-radius: 2em;
+                border: none;
+            }
+
+            .inputGroup {
+                display: flex;
+                flex-direction: column;
+                padding: 0;
+
+                .error {
+                    font-size: 1rem;
+                    font-style: italic;
+                    color: $clrLightRed;
+                    align-self: flex-start;
+                    visibility: hidden;
+        
+                    &.visible {
+                        margin-left: 4.5em;
+                        margin-top: .5em;
+                        visibility: visible;
+                    }
+
+                    &::before {
+                        content: "Please provide a valid email address";
+                    }
+
+                    &.empty::before {
+                        content: "Whoops! It looks like you forgot to add your email";
+                    }
+                }
+
+                input {
+                    border: 1px solid $clrPaleBlue;
+                    
+                    &::placeholder {
+                        color: $clrPaleBlue;
+                        padding-left: 1em;
+                        font-size: 1.25rem;
+                    }
+    
+                    &:active,
+                    &:focus,
+                    &:hover {
+                        outline: none;
+                        border: 1px solid $clrVeryDarkBlue;
+                    }
+    
+                    &.invalid {
+                        border: 1px solid $clrLightRed;
+                    }
+    
+                }
+            }
+
+            button {
+                cursor: pointer;
+                background-color: $clrBlue;
+                color: $clrWhite;
+                box-shadow: 0 .25em .5em $clrPaleBlue;
+            }
+        }
+
+        img {
+            width: 100%;
+            padding-block: 5em;
+        }
+
+        .social {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 1.5em;
+            padding-block: 2em;
+
+            i {
+                border: 1px solid rgba($clrPaleBlue, .5);
+                border-radius: 50%;
+                background-color: $clrWhite;
+                color: $clrBlue;
+                width: 2em;
+                height: 2em;
+                text-align: center;
+                font-size: $fontSize;
+                font-weight: 600;
+                line-height: 2em;
+                cursor: pointer;
+
+                &:hover,
+                &:active,
+                &:focus {
+                    background-color: $clrBlue;
+                    color: $clrWhite;
+                }
+            }
+        }
+
+        small {
+            margin-top: 1em;
+            font-size: 1rem;
+            color: $clrGray;
+        }
+    }
+}
+
+@media (min-width: 476px) {
+    main {
+        place-content: center;
+        padding-inline: 30em;
+        .content {
+
+            h1 {
+                margin-top: 1.5em;
+            }
+
+            .input {
+                flex-direction: row;
+                margin-top: 3em;
+
+                input {
+                    border: 1px solid rgba($clrGray, .5);
+                    
+                    &::placeholder {
+                        color: rgba($clrGray, .5);
+                    }
+    
+                }
+
+                button {
+                    flex: 30%;
+                }
+            }
+        }
+    }
+  }
